@@ -1,0 +1,148 @@
+
+<!-- Design by foolishdeveloper.com -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+    
+<style>
+@media only screen and (min-width: 600) {
+    #timer {
+        margin-left: 100px;
+    }
+}
+@media only screen and (min-width: 900) {
+  div.example {
+    font-size: 80px;
+  }
+}
+body {
+    color: brown;
+    font-family: 'Chonburi', cursive;
+    text-align: center;
+    background: #fafafa;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+p {
+    text-align: center;
+    font-family: 'Chonburi', cursive;
+    font-size: 50px;
+}
+#timer {
+    text-align: center;
+    /* transform: translateX(30%); */
+    font-family: 'Chonburi', cursive;
+    font-size: 3em;
+}
+
+#timer div {
+    font-family: 'Chonburi', cursive;
+    display: inline-block;
+    padding: 4vw;
+}
+
+#timer div span {
+    font-family: 'Chonburi', cursive;
+    display: block;
+    margin-top: 15px;
+    font-size: .35em;
+    
+}
+#footer {
+    font-family: 'Chonburi', cursive;;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 240px;
+
+}
+#footer a {
+    font-family: 'Chonburi', cursive;;
+    font-size: 15px;
+    text-decoration: none;
+}
+#footer a:link {
+    color: brown;
+}
+#footer a:visited {
+    color: brown;
+}
+#footer a:active {
+    color: brown;
+}
+#footer a:hover {
+  color: #fff;
+}
+#footer a:hover:after {
+  height: 100%;
+}
+#footer a:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: brown;
+}
+text {
+    cursor: pointer;
+}
+text:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: brown;
+}
+text:hover:after {
+    height: 5px;
+
+}
+
+  </style>
+</head>
+
+<body>
+<p>ฉีดไฟเซอร์ <text>#เข็มสอง<text></p>
+<div id="timer"></div>
+<div id="footer">Created by <a href="https://github.com/itsqsora" target="_blank">itsqsora :)</a></div>
+<script type="text/javascript">
+function updateTimer() {
+    future = Date.parse("nov 1, 2021 8:30:00");
+    now = new Date();
+    diff = future - now;
+
+    days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    hours = Math.floor(diff / (1000 * 60 * 60));
+    mins = Math.floor(diff / (1000 * 60));
+    secs = Math.floor(diff / 1000);
+
+    d = days;
+    h = hours - days * 24;
+    m = mins - hours * 60;
+    s = secs - mins * 60;
+
+    document.getElementById("timer")
+        .innerHTML =
+        '<div>' + d + '<span>วัน</span></div>' +
+        '<div>' + h + '<span>ชั่วโมง</span></div>' +
+        '<div>' + m + '<span>นาที</span></div>' +
+        '<div>' + s + '<span>วินาที</span></div>';
+}
+setInterval('updateTimer()', 1000);
+</script>
+</body>
+</html>
